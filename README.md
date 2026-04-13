@@ -89,6 +89,22 @@ echo $package->hello();
 ```bash
 composer test
 ```
+# 1. Va dans le dossier du projet
+cd ~/Downloads/laravel-package
+
+# 2. Lance composer install
+composer install
+
+# 3. Génère la clé app
+cp .env.example .env
+php artisan key:generate
+
+# 4. Lance les migrations (SQLite par défaut)
+php artisan migrate
+
+# 5. Installe les assets JS
+npm install
+npm run dev
 
 ## Changelog
 
