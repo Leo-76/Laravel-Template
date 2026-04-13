@@ -1,5 +1,5 @@
 {
-    "name": "Leo76/package-name",
+    "name": "Leo/package-name",
     "description": "A Laravel package description",
     "type": "library",
     "keywords": ["laravel", "package"],
