@@ -9,11 +9,64 @@ A short description of your Laravel package.
 ## Requirements
 
 - PHP ^8.1
+- Composer ^2.0
+- Node.js ^18 & NPM
 - Laravel ^10.0 or ^11.0
 
-## Installation
+## Local Development Setup
 
-Install via Composer:
+Follow these steps to get the project running on your machine.
+
+### 1. Clone & go to the project folder
+
+```bash
+cd ~/Downloads/laravel-package
+```
+
+### 2. Install PHP dependencies
+
+```bash
+composer install
+```
+
+> This will generate the `vendor/` folder and `composer.lock` automatically.
+
+### 3. Set up the environment file
+
+```bash
+cp .env.example .env
+php artisan key:generate
+```
+
+> Edit `.env` to configure your database, mail, etc. By default, SQLite is used — no extra setup needed.
+
+### 4. Run the database migrations
+
+```bash
+php artisan migrate
+```
+
+> Optionally seed the database with test data:
+> ```bash
+> php artisan db:seed
+> ```
+
+### 5. Install JS dependencies & start the dev server
+
+```bash
+npm install
+npm run dev
+```
+
+> For a production build, use `npm run build` instead.
+
+Your application is now running at **http://localhost:8000** (or use `php artisan serve`).
+
+---
+
+## Installation via Packagist
+
+Once published, install the package in any Laravel project:
 
 ```bash
 composer require vendor-name/package-name
@@ -89,7 +142,6 @@ echo $package->hello();
 ```bash
 composer test
 ```
-
 
 ## Changelog
 
